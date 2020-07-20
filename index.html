@@ -11549,7 +11549,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20200720190539453" list="$:/core/ui/SideBar/Recent [[Dockerize your application and Deploy it to Heroku]]" modified="20200720190653262" title="$:/StoryList">
+<div created="20200720212153044" list="$:/core/ui/SideBar/Recent [[Dockerize your application and Deploy it to Heroku]]" modified="20200720212153044" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -12566,7 +12566,7 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20200720190106742" modified="20200720190106742" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.22/index.html" url="https://tiddlywiki.com/library/v5.1.22/index.html">
 <pre>loaded</pre>
 </div>
-<div created="20200720184524387" modified="20200720190652743" title="$:/temp/tobibeer/preview-1-tiddler">
+<div created="20200720184524387" modified="20200720212152919" title="$:/temp/tobibeer/preview-1-tiddler">
 <pre>Dockerize your application and Deploy it to Heroku</pre>
 </div>
 <div created="20200720183734213" modified="20200720183738345" title="$:/theme">
@@ -12782,7 +12782,7 @@ From now on, every time I want to run `dokku` command, I just run it locally, fo
 dokku-remote apps:create awesome-app
 ```</pre>
 </div>
-<div created="20200720184757490" modified="20200720190804204" tags="linux" title="Dockerize your application and Deploy it to Heroku" type="text/vnd.tiddlywiki">
+<div created="20200720184757490" modified="20200720212214497" tags="linux" title="Dockerize your application and Deploy it to Heroku" type="text/vnd.tiddlywiki">
 <pre>There are various reasons you want to deploy your application as a Docker container on Heroku, one of the reasonable looking one is you want to mess with a language that doesn't officially supported by Heroku yet.
 
 ---
@@ -12794,7 +12794,7 @@ The steps of doing so is simple:
 
 For the sake of simplicity, in this article, I'm showing you how to Dockerize a NodeJS application and deploy it to Heroku, ignoring the fact that NodeJS was supported by Heroku from almost its day-1.
 
-## Dockerize your application
+!! Dockerize your application
 
 Let's say, you have a really complex NodeJS application, like:
 
@@ -12830,7 +12830,7 @@ docker run --rm -it -e PORT=3000 -p 3000:3000 &lt;your-name&gt;/&lt;your-app&gt;
 
 If everything run well, we're now able to proceed to the next step: Push the Docker image to heroku and deploy our application.
 
-## Deploy to Heroku
+!! Deploy to Heroku
 
 First, even if you already logged in to Heroku Command Line tool, you also need to make sure you logged in to Heroku **Container Registry**:
 
