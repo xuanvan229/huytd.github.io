@@ -11549,7 +11549,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>yes</pre>
 </div>
-<div created="20200720190023574" list="$:/core/ui/SideBar/Recent $:/ControlPanel" modified="20200720190034856" title="$:/StoryList">
+<div created="20200720190023574" list="[[Bare Metal Raspberry Pi Notes]]" modified="20200720190316853" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -12566,8 +12566,8 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20200720190106742" modified="20200720190106742" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.22/index.html" url="https://tiddlywiki.com/library/v5.1.22/index.html">
 <pre>loaded</pre>
 </div>
-<div created="20200720184524387" modified="20200720190052244" title="$:/temp/tobibeer/preview-1-tiddler">
-<pre>TiddlyWiki</pre>
+<div created="20200720184524387" modified="20200720190316731" title="$:/temp/tobibeer/preview-1-tiddler">
+<pre>Bare Metal Raspberry Pi Notes</pre>
 </div>
 <div created="20200720183734213" modified="20200720183738345" title="$:/theme">
 <pre>$:/themes/tiddlywiki/vanilla</pre>
@@ -12691,28 +12691,27 @@ This is the kind of idea from Zettelkasten method and are widely adopted right n
 
 Personally, I found taking atomic notes help me remember things better, since everytime I'm writing, I just need to think about a single think, develop my ideas on it to the best and I don't have to worry about connecting the dots.</pre>
 </div>
-<div created="20200720185016346" modified="20200720185126903" tags="hardware rust" title="Bare Metal Raspberry Pi Notes" type="text/vnd.tiddlywiki">
-<pre>**VideoCore** is a low-power processor on Raspberry Pi to handle multimedia stuff, some document mentioned it as a GPU of the board. It also supported OpenGL ES.
+<div created="20200720185016346" modified="20200720190505695" tags="hardware rust" title="Bare Metal Raspberry Pi Notes" type="text/vnd.tiddlywiki">
+<pre>''VideoCore'' is a low-power processor on Raspberry Pi to handle multimedia stuff, some document mentioned it as a GPU of the board. It also supported OpenGL ES.
 
 Raspberry Pi 4 uses VideoCore VI processor, and it can handle textures as large as 7680x7680 pixels.
 
-[[Raspberry Pi VideoCore APIs|https://elinux.org/Raspberry_Pi_VideoCore_APIs]]
+* [[Raspberry Pi VideoCore APIs|https://elinux.org/Raspberry_Pi_VideoCore_APIs]]
 
 ---
 
-**Mailboxes** are the communication mechanism between the processor and VideoCore. There are two mailboxes on a Pi, call it `M0` (to handle communication from VideoCore to processor) and `M1` (for the other way).
+''Mailboxes'' are the communication mechanism between the processor and VideoCore. There are two mailboxes on a Pi, call it `M0` (to handle communication from VideoCore to processor) and `M1` (for the other way).
 
 Each mailbox has many **virtual channels**. For example, for framebuffer, LEDs, buttons, touch screen,...
 
-[[raspberrypi/documentation|https://github.com/raspberrypi/documentation/tree/JamesH65-mailbox_docs/configuration/mailboxes]]
+* [[raspberrypi/documentation|https://github.com/raspberrypi/documentation/tree/JamesH65-mailbox_docs/configuration/mailboxes]]
 
 ---
 
 To use QEMU to setup a Raspberry Pi emulator:
 
-[Emulate Raspberry Pi with QEMU](https://azeria-labs.com/emulate-raspberry-pi-with-qemu/)
-
-[Using QEMU to emulate a Raspberry Pi](https://blog.agchapman.com/using-qemu-to-emulate-a-raspberry-pi/)
+* [[Emulate Raspberry Pi with QEMU|https://azeria-labs.com/emulate-raspberry-pi-with-qemu/]]
+* [[Using QEMU to emulate a Raspberry Pi|https://blog.agchapman.com/using-qemu-to-emulate-a-raspberry-pi/]]
 
 ---
 
@@ -12726,13 +12725,13 @@ $ rustup target add arm-unknown-linux-gnueabihf
 
 Since we're not directly compile our code to a binary, we should point it out in the code:
 
-```rust
+```
 #![crate_type = &quot;staticlib&quot;]
 ```
 
 In the linker process, there's also a function that needed, so we're required to do something like:
 
-```rust
+```
 #[no_mangle]
 pub extern fn __aeabi_unwind_cpp_pr0() {}
 ```
@@ -12743,11 +12742,9 @@ More on this later
 
 Some good resources to get started with bare metal programming:
 
-[Raspberry Pi 3 Bare Metal - Part 1](https://adamransom.github.io/posts/raspberry-pi-bare-metal-part-1.html)
-
-[Raspberry Pi 3 Bare Metal in Rust](https://zhuohua.me/post/raspberry-pi-3-bare-metal-in-rust/)
-
-[seankerr/rust-rpi-examples](https://github.com/seankerr/rust-rpi-examples)</pre>
+* [[Raspberry Pi 3 Bare Metal - Part 1|https://adamransom.github.io/posts/raspberry-pi-bare-metal-part-1.html]]
+* [[Raspberry Pi 3 Bare Metal in Rust|https://zhuohua.me/post/raspberry-pi-3-bare-metal-in-rust/]]
+* [[seankerr/rust-rpi-examples|https://github.com/seankerr/rust-rpi-examples]]</pre>
 </div>
 <div created="20200720184703142" modified="20200720184733137" tags="linux" title="Command over SSH" type="text/x-markdown">
 <pre>You can execute any command over SSH, and if you setup your SSH key for the SSH access, it would be more safe and quicker. For example, I have a `dokku` command that I run regularly over SSH.
