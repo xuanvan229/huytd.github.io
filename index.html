@@ -209,6 +209,8 @@ Error message and password prompt
 
 <li>$:/temp/search</li>
 
+<li>$:/temp/tobibeer/preview-1-tiddler</li>
+
 <li>$:/theme</li>
 
 <li>$:/themes/tiddlywiki/snowwhite</li>
@@ -216,6 +218,8 @@ Error message and password prompt
 <li>$:/themes/tiddlywiki/vanilla</li>
 
 <li>Atomic Notes</li>
+
+<li>Command over SSH 3aeac914b8844c51b6347a11a6fa7be4.md</li>
 
 <li>TiddlyWiki</li>
 
@@ -9642,7 +9646,7 @@ Error message and password prompt
 <div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
 
-# [[$:/plugins/tobibeer/preview]]</pre>
+# [[Command over SSH 3aeac914b8844c51b6347a11a6fa7be4.md]]</pre>
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
@@ -10810,7 +10814,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20200720184250808" list="$:/core/ui/MoreSideBar/All TiddlyWiki" modified="20200720184512602" title="$:/StoryList">
+<div created="20200720184250808" list="$:/Import" modified="20200720184529400" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -10876,6 +10880,9 @@ Error message and password prompt
 </div>
 <div created="20200720184224759" modified="20200720184230348" title="$:/temp/search">
 <pre></pre>
+</div>
+<div created="20200720184524387" modified="20200720184528687" title="$:/temp/tobibeer/preview-1-tiddler">
+<pre>Atomic Notes</pre>
 </div>
 <div created="20200720183734213" modified="20200720183738345" title="$:/theme">
 <pre>$:/themes/tiddlywiki/vanilla</pre>
@@ -10998,6 +11005,45 @@ Error message and password prompt
 This is the kind of idea from Zettelkasten method and are widely adopted right now.
 
 Personally, I found taking atomic notes help me remember things better, since everytime I'm writing, I just need to think about a single think, develop my ideas on it to the best and I don't have to worry about connecting the dots.</pre>
+</div>
+<div title="Command over SSH 3aeac914b8844c51b6347a11a6fa7be4.md" type="text/x-markdown">
+<pre># Command over SSH
+
+Created: Jul 5, 2020 4:41 PM
+Last Edited: Jul 6, 2020 12:16 AM
+Tags: linux
+
+You can execute any command over SSH, and if you setup your SSH key for the SSH access, it would be more safe and quicker. For example, I have a `dokku` command that I run regularly over SSH.
+
+First, add your public key to a remote server with:
+
+```
+cat ~/.ssh/id_rsa.pub | ssh &lt;user&gt;@&lt;server&gt; 'cat &gt;&gt; ~/.ssh/authorized_keys'
+```
+
+Then, write a wrapper for your command, I usually put the `-remote` suffix for remote commands like this:
+
+**/usr/local/bin/&lt;command&gt;-remote**
+
+```
+#!/bin/bash
+ssh -t &lt;user&gt;@&lt;server&gt; &lt;command&gt; $1
+```
+
+In case it's `dokku`:
+
+**/usr/local/bin/dokku-remote**
+
+```
+#!/bin/bash
+ssh -t &lt;user&gt;@&lt;server&gt; dokku $1
+```
+
+From now on, every time I want to run `dokku` command, I just run it locally, for example, create a new app on my `dokku` server:
+
+```
+dokku-remote apps:create awesome-app
+```</pre>
 </div>
 <div created="20200720182533025" modified="20200720182752817" tags="" title="TiddlyWiki">
 <pre>TiddlyWiki is a simple and single page wiki software that help us create our personal knowledge base on the browser.
