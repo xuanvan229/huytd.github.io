@@ -221,6 +221,8 @@ Error message and password prompt
 
 <li>Atomic Notes</li>
 
+<li>Bare Metal Raspberry Pi Notes 0449e7ac67ae4bfa8f04ebaaf9cccc5c.md</li>
+
 <li>Command over SSH</li>
 
 <li>Dockerize your application and Deploy it to Heroku</li>
@@ -9650,10 +9652,10 @@ Error message and password prompt
 <div created="20200720182504115" modified="20200720182504699" title="$:/GitHub/Username">
 <pre>huytd</pre>
 </div>
-<div modified="20200720184811179" status="complete" title="$:/Import">
+<div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
 
-# [[Dockerize your application and Deploy it to Heroku]]</pre>
+# [[Bare Metal Raspberry Pi Notes 0449e7ac67ae4bfa8f04ebaaf9cccc5c.md]]</pre>
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
@@ -10821,7 +10823,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20200720184250808" list="$:/Import [[Dockerize your application and Deploy it to Heroku]]" modified="20200720184750540" title="$:/StoryList">
+<div created="20200720184955055" list="$:/Import" modified="20200720184955055" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -11012,6 +11014,70 @@ Error message and password prompt
 This is the kind of idea from Zettelkasten method and are widely adopted right now.
 
 Personally, I found taking atomic notes help me remember things better, since everytime I'm writing, I just need to think about a single think, develop my ideas on it to the best and I don't have to worry about connecting the dots.</pre>
+</div>
+<div title="Bare Metal Raspberry Pi Notes 0449e7ac67ae4bfa8f04ebaaf9cccc5c.md" type="text/x-markdown">
+<pre># Bare Metal Raspberry Pi Notes
+
+Created: Jul 20, 2020 12:00 AM
+Last Edited: Jul 20, 2020 12:38 AM
+Tags: hardware, rust
+
+**VideoCore** is a low-power processor on Raspberry Pi to handle multimedia stuff, some document mentioned it as a GPU of the board. It also supported OpenGL ES.
+
+Raspberry Pi 4 uses VideoCore VI processor, and it can handle textures as large as 7680x7680 pixels.
+
+[Raspberry Pi VideoCore APIs](https://elinux.org/Raspberry_Pi_VideoCore_APIs)
+
+---
+
+**Mailboxes** are the communication mechanism between the processor and VideoCore. There are two mailboxes on a Pi, call it `M0` (to handle communication from VideoCore to processor) and `M1` (for the other way).
+
+Each mailbox has many **virtual channels**. For example, for framebuffer, LEDs, buttons, touch screen,...
+
+[raspberrypi/documentation](https://github.com/raspberrypi/documentation/tree/JamesH65-mailbox_docs/configuration/mailboxes)
+
+---
+
+To use QEMU to setup a Raspberry Pi emulator:
+
+[Emulate Raspberry Pi with QEMU](https://azeria-labs.com/emulate-raspberry-pi-with-qemu/)
+
+[Using QEMU to emulate a Raspberry Pi](https://blog.agchapman.com/using-qemu-to-emulate-a-raspberry-pi/)
+
+---
+
+To compile Rust for bare metal Raspberry Pi, we need to use `arm-unknown-linux-gnueabihf` target.
+
+```rust
+$ rustup target add arm-unknown-linux-gnueabihf
+```
+
+---
+
+Since we're not directly compile our code to a binary, we should point it out in the code:
+
+```rust
+#![crate_type = &quot;staticlib&quot;]
+```
+
+In the linker process, there's also a function that needed, so we're required to do something like:
+
+```rust
+#[no_mangle]
+pub extern fn __aeabi_unwind_cpp_pr0() {}
+```
+
+More on this later
+
+---
+
+Some good resources to get started with bare metal programming:
+
+[Raspberry Pi 3 Bare Metal - Part 1](https://adamransom.github.io/posts/raspberry-pi-bare-metal-part-1.html)
+
+[Raspberry Pi 3 Bare Metal in Rust](https://zhuohua.me/post/raspberry-pi-3-bare-metal-in-rust/)
+
+[seankerr/rust-rpi-examples](https://github.com/seankerr/rust-rpi-examples)</pre>
 </div>
 <div created="20200720184703142" modified="20200720184733137" tags="linux" title="Command over SSH" type="text/x-markdown">
 <pre>You can execute any command over SSH, and if you setup your SSH key for the SSH access, it would be more safe and quicker. For example, I have a `dokku` command that I run regularly over SSH.
