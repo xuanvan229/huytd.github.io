@@ -149,6 +149,8 @@ Error message and password prompt
 
 <li>$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/import</li>
 
+<li>$:/config/RelinkOnRename</li>
+
 <li>$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/more-tiddler-actions</li>
 
 <li>$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/permalink</li>
@@ -219,7 +221,9 @@ Error message and password prompt
 
 <li>Atomic Notes</li>
 
-<li>Command over SSH 3aeac914b8844c51b6347a11a6fa7be4.md</li>
+<li>Command over SSH</li>
+
+<li>Dockerize your application and Deploy it to Heroku</li>
 
 <li>TiddlyWiki</li>
 
@@ -248,6 +252,9 @@ Error message and password prompt
 </div>
 <div created="20200720183855320" modified="20200720183855320" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/import">
 <pre>show</pre>
+</div>
+<div created="20200720184707958" modified="20200720184707958" title="$:/config/RelinkOnRename">
+<pre>yes</pre>
 </div>
 <div created="20200720183826859" modified="20200720183826859" title="$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/more-tiddler-actions">
 <pre>hide</pre>
@@ -9643,10 +9650,10 @@ Error message and password prompt
 <div created="20200720182504115" modified="20200720182504699" title="$:/GitHub/Username">
 <pre>huytd</pre>
 </div>
-<div status="complete" title="$:/Import">
+<div modified="20200720184811179" status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
 
-# [[Command over SSH 3aeac914b8844c51b6347a11a6fa7be4.md]]</pre>
+# [[Dockerize your application and Deploy it to Heroku]]</pre>
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
@@ -10814,7 +10821,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20200720184250808" list="$:/Import" modified="20200720184529400" title="$:/StoryList">
+<div created="20200720184250808" list="$:/Import [[Dockerize your application and Deploy it to Heroku]]" modified="20200720184750540" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -10881,8 +10888,8 @@ Error message and password prompt
 <div created="20200720184224759" modified="20200720184230348" title="$:/temp/search">
 <pre></pre>
 </div>
-<div created="20200720184524387" modified="20200720184528687" title="$:/temp/tobibeer/preview-1-tiddler">
-<pre>Atomic Notes</pre>
+<div created="20200720184524387" modified="20200720184750269" title="$:/temp/tobibeer/preview-1-tiddler">
+<pre>Dockerize your application and Deploy it to Heroku 3132e73c5f6f49979edcd099e85afe9e.md</pre>
 </div>
 <div created="20200720183734213" modified="20200720183738345" title="$:/theme">
 <pre>$:/themes/tiddlywiki/vanilla</pre>
@@ -11006,14 +11013,8 @@ This is the kind of idea from Zettelkasten method and are widely adopted right n
 
 Personally, I found taking atomic notes help me remember things better, since everytime I'm writing, I just need to think about a single think, develop my ideas on it to the best and I don't have to worry about connecting the dots.</pre>
 </div>
-<div title="Command over SSH 3aeac914b8844c51b6347a11a6fa7be4.md" type="text/x-markdown">
-<pre># Command over SSH
-
-Created: Jul 5, 2020 4:41 PM
-Last Edited: Jul 6, 2020 12:16 AM
-Tags: linux
-
-You can execute any command over SSH, and if you setup your SSH key for the SSH access, it would be more safe and quicker. For example, I have a `dokku` command that I run regularly over SSH.
+<div created="20200720184703142" modified="20200720184733137" tags="linux" title="Command over SSH" type="text/x-markdown">
+<pre>You can execute any command over SSH, and if you setup your SSH key for the SSH access, it would be more safe and quicker. For example, I have a `dokku` command that I run regularly over SSH.
 
 First, add your public key to a remote server with:
 
@@ -11044,6 +11045,79 @@ From now on, every time I want to run `dokku` command, I just run it locally, fo
 ```
 dokku-remote apps:create awesome-app
 ```</pre>
+</div>
+<div created="20200720184757490" modified="20200720184811178" tags="linux" title="Dockerize your application and Deploy it to Heroku" type="text/x-markdown">
+<pre>There are various reasons you want to deploy your application as a Docker container on Heroku, one of the reasonable looking one is you want to mess with a language that doesn't officially supported by Heroku yet.
+
+---
+
+The steps of doing so is simple:
+
+1. Dockerize your application — build it to a Docker image
+2. Push that Docker image to Heroku
+
+For the sake of simplicity, in this article, I'm showing you how to Dockerize a NodeJS application and deploy it to Heroku, ignoring the fact that NodeJS was supported by Heroku from almost its day-1.
+
+## Dockerize your application
+
+Let's say, you have a really complex NodeJS application, like:
+
+```
+.
+├── index.js
+└── package.json
+```
+
+What we need to do is create a `Dockerfile` file, to define how should we build our Docker image:
+
+```
+FROM node:10
+RUN apt-get update
+WORKDIR /
+COPY package*.json ./
+RUN npm install
+COPY . .
+CMD [&quot;node&quot;, &quot;index.js&quot;]
+```
+
+We can now build our Docker image:
+
+```
+docker build -t &lt;your-name&gt;/&lt;your-app&gt; .
+```
+
+And to make sure it work, you can run it locally:
+
+```
+docker run --rm -it -e PORT=3000 -p 3000:3000 &lt;your-name&gt;/&lt;your-app&gt;
+```
+
+If everything run well, we're now able to proceed to the next step: Push the Docker image to heroku and deploy our application.
+
+## Deploy to Heroku
+
+First, even if you already logged in to Heroku Command Line tool, you also need to make sure you logged in to Heroku **Container Registry**:
+
+```
+heroku container:login
+```
+
+Create your application and push the Docker image:
+
+```
+heroku create &lt;your-app-name&gt;
+heroku container:push web --app &lt;your-app-name&gt;
+```
+
+Now, it's time to drive to In-N-Out Burger to grab a double-double combo, chocolate shake would be better than coke, don't forget to tell them you don't like onion. You can finish your burger before going back to work because it might take sometimes to push your huge-ass Docker image to Heroku.
+
+By the time you're back, you can now hit the deploy button:
+
+```
+heroku container:release web --app &lt;your-app-name&gt;
+```
+
+And that's it!</pre>
 </div>
 <div created="20200720182533025" modified="20200720182752817" tags="" title="TiddlyWiki">
 <pre>TiddlyWiki is a simple and single page wiki software that help us create our personal knowledge base on the browser.
