@@ -6,6 +6,7 @@
       {
         "id": "6446154906a575f6",
         "type": "leaf",
+        "dimension": 94.68267581475128,
         "active": true,
         "state": {
           "type": "markdown",
@@ -42,7 +43,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -68,13 +70,13 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 394
   },
   "lastOpenFiles": [
     "Markdown parser using Nom.md",
-    "Notes on Actix ActorFuture.md",
-    "How to create a SystemService in Actix.md",
     "How to create an Actor in Actix.md",
-    "Actix Framework.md"
+    "Nom Parser.md",
+    "Compile Rust to WebAssembly.md",
+    "Bare Metal Raspberry Pi Notes.md"
   ]
 }
