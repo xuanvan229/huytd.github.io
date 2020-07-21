@@ -1,3 +1,5 @@
+#How to create an Actor in Actix
+
 #rust, #actix, #actor-model 
 
 To create an Actor in [[Actix Framework]]) we first create a struct, then implement `Actor` trait for it. An actor has a `Context`, is where it run, and we can control the life cycle of it via the context.

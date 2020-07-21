@@ -1,3 +1,5 @@
+#Bare Metal Raspberry Pi Notes
+
 #rust #hardware #raspberry-pi
 
 **VideoCore** is a low-power processor on Raspberry Pi to handle multimedia stuff, some document mentioned it as a GPU of the board. It also supported OpenGL ES.

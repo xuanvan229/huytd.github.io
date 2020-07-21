@@ -11,7 +11,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Markdown parser using Nom.md",
+            "file": "posts/Actor Model.md",
             "mode": "source"
           }
         }
@@ -43,8 +43,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -73,10 +72,10 @@
     "width": 394
   },
   "lastOpenFiles": [
+    "posts/Actor Model.md",
     "Markdown parser using Nom.md",
     "How to create an Actor in Actix.md",
     "Nom Parser.md",
-    "Compile Rust to WebAssembly.md",
-    "Bare Metal Raspberry Pi Notes.md"
+    "Compile Rust to WebAssembly.md"
   ]
 }

@@ -1,3 +1,5 @@
+#How to create a Websocket Actor in Actix
+
 #rust, #actix, #actor-model, #websocket
 
 To handle WebSocket in [[Actix Framework]] you need to create a [WebSocket Actor](https://docs.rs/actix-web-actors/3.0.0-alpha.1/actix_web_actors/ws/index.html). Each actor will be responsible for each connected client.

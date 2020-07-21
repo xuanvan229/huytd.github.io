@@ -1,4 +1,6 @@
-#rust, #actix, #actor-model 
+#Notes on Actix ActorFuture
+
+#rust, #actix, #actor-model
 
 First, [ActorFuture](https://docs.rs/actix/0.10.0-alpha.3/actix/fut/trait.ActorFuture.html) is Actix's version of future, it's not the traditional futures.
 
@@ -30,3 +32,8 @@ After that, we can consume the ActorFuture just like how we do it for single mes
 ```rust
 run.map(|result, actor, context} { ... }).wait(ctx);
 ```
+
+## Backlinks
+* [[How to create a SystemService in Actix]]
+	* The return type of `from_registry()` is an `Addr`. For more details about how to handle `send` messages, see [[Notes on Actix ActorFuture]].
+

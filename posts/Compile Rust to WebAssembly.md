@@ -1,3 +1,5 @@
+#Compile Rust to WebAssembly
+
 #rust #webassembly
 
 A Rust program can be compiled to WebAssembly as a library or a full runnable entry point (if the project type is binary).
