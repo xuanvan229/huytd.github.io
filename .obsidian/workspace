@@ -1,0 +1,80 @@
+{
+  "main": {
+    "id": "7232cd8508543767",
+    "type": "split",
+    "children": [
+      {
+        "id": "6446154906a575f6",
+        "type": "leaf",
+        "active": true,
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Markdown parser using Nom.md",
+            "mode": "source"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "84a4e6a9496919d8",
+    "type": "split",
+    "children": [
+      {
+        "id": "daa2e6978b8cb0d3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1b1f9a63873817fc",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "b5b18d55ee1d0714",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "35f22323907ce532",
+    "type": "split",
+    "children": [
+      {
+        "id": "c38987546fad74ce",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "779b696fe2ac6eee",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "lastOpenFiles": [
+    "Markdown parser using Nom.md",
+    "Notes on Actix ActorFuture.md",
+    "How to create a SystemService in Actix.md",
+    "How to create an Actor in Actix.md",
+    "Actix Framework.md"
+  ]
+}
