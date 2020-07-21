@@ -1,0 +1,4 @@
+theme: minima
+name: Huy's Wiki
+markdown: kramdown
+highlighter: rouge
