@@ -1,4 +1,4 @@
-#Notes on Actix ActorFuture
+# Notes on Actix ActorFuture
 
 #rust, #actix, #actor-model
 

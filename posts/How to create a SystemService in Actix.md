@@ -1,6 +1,6 @@
-#How to create a SystemService in Actix
+# How to create a SystemService in Actix
 
-#rust, #actix, #actor-model 
+#rust, #actix, #actor-model
 
 In [[Actix Framework]], an actor can be registered as a service, which help it run automatically. There are two types of service, ArbiterService, which is unique per arbiter, and SystemService, which is unique per system.
 

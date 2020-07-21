@@ -1,4 +1,4 @@
-#Markdown parser using Nom
+# Markdown parser using Nom
 
 #rust #nom #parser
 
@@ -31,7 +31,7 @@ fn parse_link(input: &str) -> Result<&str, (&str, &str)> {
 fn parse_inline_markdown(i: &str) -> Result<&str, MarkdownInline> {
 	alt((
 		map(parse_bold_text, |s: &str| MarkdownInline::Bold(s)),
-		map(parse_link, |(text, url): (&str, &str)| MarkdownInline::Link(text, url)),	
+		map(parse_link, |(text, url): (&str, &str)| MarkdownInline::Link(text, url)),
 	))(i)
 }
 ```

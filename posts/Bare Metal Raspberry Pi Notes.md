@@ -1,4 +1,4 @@
-#Bare Metal Raspberry Pi Notes
+# Bare Metal Raspberry Pi Notes
 
 #rust #hardware #raspberry-pi
 

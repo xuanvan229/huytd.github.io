@@ -1,6 +1,6 @@
-#How to create an Actor in Actix
+# How to create an Actor in Actix
 
-#rust, #actix, #actor-model 
+#rust, #actix, #actor-model
 
 To create an Actor in [[Actix Framework]]) we first create a struct, then implement `Actor` trait for it. An actor has a `Context`, is where it run, and we can control the life cycle of it via the context.
 
@@ -17,7 +17,7 @@ The lifecycle of an actor includes these states: **Started** -> **Running** -> *
 ```rust
 impl Actor for MyActor {
 	type Context = Context<Self>;
-	
+
 	fn started(&mut self, ctx: &mut Context<Self>) {
 		...
 	}
@@ -37,7 +37,7 @@ If you want your actor to be able to handle a certain message, implement `Handle
 ```rust
 impl Handler<AddNumber> for MyActor {
 	type Result = i32;
-	
+
 	fn handle(&mut self, msg: AddNumber, ctx: &mut Self::Context) -> Self::Result {
 		...
 	}

@@ -1,6 +1,6 @@
-#Rediscovering the Benefits of Drawing
+# Rediscovering the Benefits of Drawing
 
-#thinking #reading 
+#thinking #reading
 
 Article: https://blogs.scientificamerican.com/symbiartic/rediscovering-the-forgotten-benefits-of-drawing/
 

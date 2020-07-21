@@ -1,6 +1,6 @@
-#The Art of Close Reading
+# The Art of Close Reading
 
-#reading #thinking 
+#reading #thinking
 
 Reference Link: https://eric.ed.gov/?id=EJ718563
 Full text: https://files.eric.ed.gov/fulltext/EJ718563.pdf

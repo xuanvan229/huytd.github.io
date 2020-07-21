@@ -1,4 +1,4 @@
-#Compile Rust to WebAssembly
+# Compile Rust to WebAssembly
 
 #rust #webassembly
 

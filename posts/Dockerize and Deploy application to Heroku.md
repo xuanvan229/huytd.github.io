@@ -1,4 +1,4 @@
-#Dockerize and Deploy application to Heroku
+# Dockerize and Deploy application to Heroku
 
 #linux #docker #deployment #heroku #operating
 

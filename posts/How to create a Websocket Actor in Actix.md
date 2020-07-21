@@ -1,4 +1,4 @@
-#How to create a Websocket Actor in Actix
+# How to create a Websocket Actor in Actix
 
 #rust, #actix, #actor-model, #websocket
 
