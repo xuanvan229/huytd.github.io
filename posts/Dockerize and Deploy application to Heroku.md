@@ -1,5 +1,3 @@
-# Dockerize and Deploy application to Heroku
-
 #linux #docker #deployment #heroku #operating
 
 There are various reasons you want to deploy your application as a Docker container on Heroku, one of the reasonable looking one is you want to mess with a language that doesn't officially supported by Heroku yet.

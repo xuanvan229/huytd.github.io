@@ -1,5 +1,3 @@
-# Parser Combination
-
 #parser #compiler
 
 ## Backlinks

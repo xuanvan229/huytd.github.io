@@ -1,5 +1,3 @@
-# The Art of Close Reading
-
 #reading #thinking
 
 Reference Link: https://eric.ed.gov/?id=EJ718563

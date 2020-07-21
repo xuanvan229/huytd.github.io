@@ -1,5 +1,3 @@
-# Actix Framework
-
 #rust #actor-model
 
 Actix Framework is a Rust actor framework that help you build application using [[Actor Model]].

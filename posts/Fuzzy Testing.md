@@ -1,5 +1,3 @@
-# Fuzzy Testing
-
 #testing #engineering
 
 Fuzz Testing is a testing method that instead of writing test cases with a predefined mock data, you generate the test data dynamically and randomly to test if some property or invariant of the test unit is true.

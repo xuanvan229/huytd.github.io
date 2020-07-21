@@ -1,5 +1,3 @@
-# Tetris Effect
-
 #thinking #reading
 
 https://en.m.wikipedia.org/wiki/Tetris_effect

@@ -1,5 +1,3 @@
-# Notes on Actix ActorFuture
-
 #rust, #actix, #actor-model
 
 First, [ActorFuture](https://docs.rs/actix/0.10.0-alpha.3/actix/fut/trait.ActorFuture.html) is Actix's version of future, it's not the traditional futures.
