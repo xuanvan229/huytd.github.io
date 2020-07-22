@@ -1,5 +1,0 @@
-theme: minima
-name: Huy's Wiki
-markdown: kramdown
-highlighter: rouge
-include: ["_css"]
